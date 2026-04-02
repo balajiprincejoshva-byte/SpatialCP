@@ -9,10 +9,8 @@ By simulating localized target exposure against mapped stromal barriers, Spatial
 ---
 
 ## 🎥 Agentic Workflow Demonstration
-
-
-
-https://github.com/user-attachments/assets/523ffff6-042d-438a-b46b-5ee2a3153c97
+<!-- DROP YOUR DEMO VIDEO OR GIF RIGHT HERE -->
+*[Replace this line with your video file link or embedded GIF]*
 
 
 
