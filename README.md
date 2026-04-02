@@ -9,7 +9,11 @@ By simulating localized target exposure against mapped stromal barriers, Spatial
 ---
 
 ## 🎥 Agentic Workflow Demonstration
-![Untitled](https://github.com/user-attachments/assets/f4d26815-6421-4b39-aa06-b1f333fbda55)
+
+
+
+https://github.com/user-attachments/assets/523ffff6-042d-438a-b46b-5ee2a3153c97
+
 
 
 *(Demonstrating real-time 3D interactive diffusion bounds, time-lapse physics, and streaming agent orchestration).*
