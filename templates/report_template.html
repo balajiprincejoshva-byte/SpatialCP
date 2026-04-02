@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #191970;
+        color: #FAFAFA;
+        margin: 0;
+        padding: 40px;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    h1 {
+        color: #AAF0D1;
+        border-bottom: 2px solid #49494B;
+        padding-bottom: 10px;
+    }
+    h2 {
+        color: #0892D0;
+        margin-top: 30px;
+    }
+    .summary-card {
+        background-color: #49494B;
+        border: 1px solid #0892D0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .metric {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    .metric strong {
+        color: #AAF0D1;
+    }
+    .plot-container {
+        background-color: #49494B;
+        border-radius: 8px;
+        padding: 10px;
+        border: 1px solid #0892D0;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>SpatialCP — Diagnostic Report</h1>
+        <p>Agentic workflow analysis for spatial diffusion and response modeling.</p>
+
+        <h2>1. Simulation Setup</h2>
+        <div class="summary-card">
+            <div class="metric">Cells Analyzed: <strong>{{ num_cells }}</strong></div>
+            <div class="metric">Diffusion Iterations: <strong>{{ iterations }}</strong></div>
+            <div class="metric">Base Diffusion Coefficient: <strong>{{ diff_coef }}</strong></div>
+        </div>
+
+        <h2>2. Key Insights</h2>
+        <div class="summary-card">
+            {% for key, value in insights.items() %}
+                <div class="metric">{{ key }}: <strong>{{ value }}</strong></div>
+            {% endfor %}
+        </div>
+
+        <h2>3. Spatial Penetration Map</h2>
+        <div class="plot-container">
+            {{ plot_html | safe }}
+        </div>
+        
+        <h2>4. Cellular Response Distribution</h2>
+        <div class="plot-container">
+            {{ dist_plot_html | safe }}
+        </div>
+    </div>
+</body>
+</html>
