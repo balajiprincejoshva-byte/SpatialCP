@@ -40,7 +40,7 @@ Users are biologically anchored by inputting compound nomenclature (e.g. "Imatin
 
 ### 🌐 Live Hosted Version
 This platform is deployed securely via Streamlit Community Cloud. 
-**Access the live prototype here:** https://spatialcp-avtduabwglnuhgcm22jjhc.streamlit.app/
+**Access the live prototype here:** https://spatialcp-2csrnqjjzwungt7fxuxvdl.streamlit.app/
 
 ### Run Locally (Docker / Python)
 ```bash
