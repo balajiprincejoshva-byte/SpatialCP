@@ -33,8 +33,8 @@ st.markdown("""
             padding-bottom: 0rem;
         }
         /* Global Background Tints */
-        .stApp { background-color: #191970; }
-        [data-testid="stSidebar"] { background-color: #0E1128 !important; }
+        .stApp { background-color: #0E1117 !important; }
+        [data-testid="stSidebar"] { background-color: #121212 !important; }
         
         h1, h2, h3 { color: #AAF0D1 !important; }
         
@@ -220,11 +220,13 @@ else:
 
         with tab1:
             st.markdown("#### Tissue Microenvironment Profiling")
+            st.info("Pinch or scroll to zoom depth. Click and drag to rotate the 3D projection.", icon="🖱️")
             fig_cell_type = plot_spatial_map(df, 'cell_type', title="Tissue Cell-Type Annotations", is_categorical=True)
             st.plotly_chart(fig_cell_type, use_container_width=True)
 
         with tab2:
             st.markdown("#### Iterative Spatial Diffusion Time-lapse")
+            st.info("Pinch or scroll to zoom depth. Click and drag to rotate the 3D projection.", icon="🖱️")
             
             if 'history_df' in st.session_state:
                 fig_adv = plot_spatial_map(st.session_state.history_df, 'pred_concentration', title="Advanced Penetration Model (Animated)", is_categorical=False, animation_frame="Simulation_Step")
@@ -244,6 +246,7 @@ else:
 
         with tab3:
             st.markdown("#### Cellular Response Profiles")
+            st.info("Pinch or scroll to zoom depth. Click and drag to rotate the 3D projection.", icon="🖱️")
             c1, c2 = st.columns([1, 1])
             with c1:
                 fig_resp_map = plot_spatial_map(df, 'response_score', title="Spatial Response Efficacy Map", is_categorical=False)

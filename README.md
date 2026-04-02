@@ -1,94 +1,62 @@
-# SpatialCP 🧬 — Spatial Cellular Pharmacokinetics
+# SpatialCP 🧬: Agentic Modeling of Cellular Pharmacokinetics in Spatial Transcriptomics
 
-![SpatialCP Overview](https://img.shields.io/badge/Status-Prototype-00FFC6?style=for-the-badge) ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge) ![Streamlit](https://img.shields.io/badge/Streamlit-Dark_Mode-A855F7?style=for-the-badge)
+![SpatialCP Status](https://img.shields.io/badge/Status-Proprietary_Prototype-0892D0?style=for-the-badge) ![Architecture](https://img.shields.io/badge/Agentic-Orchestration-AAF0D1?style=for-the-badge) ![Deployment](https://img.shields.io/badge/Deployed-Streamlit_Cloud-191970?style=for-the-badge)
 
-**SpatialCP** is an interactive, agent-orchestrated decision-support platform designed to model drug diffusion and predict cell-specific pharmacodynamic responses within complex tumor microenvironments (TMEs) using **Spatial Transcriptomics** (ST) data.
+**SpatialCP** (Spatial Cellular Pharmacokinetics) is an enterprise-grade, agent-orchestrated decision-support architecture. It bridges modern Spatial Transcriptomics (ST) and *in silico* mass transport modeling to predict and overcome physical drug resistance within the Tumor Microenvironment (TME). 
 
-This project bridges software engineering, computational biology, and medicinal chemistry to provide actionable heuristics for early-stage drug candidate screening and tissue penetrance modeling.
+By simulating localized target exposure against mapped stromal barriers, SpatialCP computes cell-specific pharmacodynamic (PD) response probabilities at single-cell resolution.
 
-## 🔬 Motivation & Biological Use Case
-In solid tumors, localized regions (like dense desmoplastic stroma) prevent therapeutic molecules from penetrating the tumor core, leading to varied cellular exposure and resistance. Standard bulk RNA-seq or single-cell sequencing cannot map these spatial barriers.
+---
 
-**SpatialCP solves this by:**
-1. **Inferring Spatial Barriers:** Reading spatial transcriptomics coordinates and cell-type annotations to build a tissue resistance matrix.
-2. **Advanced Diffusion Modeling:** Moving beyond naive distance-decay models to simulate iterative spatial diffusion constrained by localized ECM/stromal density.
-3. **Response Prediction:** Weighting predicted local drug concentration with intrinsic cell-type sensitivities and baseline marker expression (e.g., target antigens).
-4. **Agentic Explanations:** Wrapping the analysis in a deterministic agentic workflow that logs execution traces, verifies inputs, and highlights "tumor core barriers" robustly.
+## 🎥 Agentic Workflow Demonstration
+<!-- DROP YOUR DEMO VIDEO OR GIF RIGHT HERE -->
+*[Replace this line with your video file link or embedded GIF]*
 
-## 🚀 Key Features
-- **Synthetic TME Generator:** Generates an immediate built-in bio-mimetic spatial dataset to demonstrate functionality without requiring external `.h5ad` or `.csv` files.
-- **Dynamic Parameter Sensitivities:** Interactive UI altering the Diffusion Coefficient, Decay Rate, and Iterations on-the-fly.
-- **Tissue Resistance Matrix mapping.**
-- **Baseline Comparisons:** Visually compare naive distance models against advanced heterogeneous resistance models.
-- **Explainable AI (XAI):** "Quick Insights" intelligently isolate the most targeted regions and resistant subtypes.
-- **Downloadable XAI Reports:** Generates polished HTML reports natively embedding interactive Plotly components utilizing a custom Jinja2 rendering pipeline.
+*(Demonstrating real-time 3D interactive diffusion bounds, time-lapse physics, and streaming agent orchestration).*
 
-## 🛠️ Tech Stack & Architecture
-- **Language**: Python 3.10
-- **Frontend / Application Engine**: Streamlit (Dark Mode enabled via CSS injection)
-- **Data & Computation**: Pandas, NumPy, SciPy (for Gaussian kernel convolution and distance broadcasting)
-- **Visualization**: Plotly Express (scatter, box charts)
-- **Reporting**: Jinja2 (HTML/CSS Templating)
-- **Deployment**: Dockerized
+---
 
-### Directory Structure
-```bash
-SpatialCP/
-├── app.py                     # Main Streamlit Dashboard Entry
-├── requirements.txt           # Python Environment
-├── Dockerfile                 # Container Deployment
-├── src/
-│   ├── config.py              # Constants, Tuning Parameters, Aesthetic colors
-│   ├── data_loader.py         # CSV Parsing & Ingestion
-│   ├── sample_data.py         # Generates Synthetic Tumor Microenvironment
-│   ├── validation.py          # Input Schema Enforcement
-│   ├── simulation/            # Core Analytical Engines
-│   │   ├── baselines.py       # Distance and Uniform implementations
-│   │   ├── diffusion.py       # Iterative Resistance Diffusion Model
-│   │   └── response.py        # PD Response scoring logic
-│   ├── agent/                 # Workflow Orchestrator
-│   │   ├── workflow.py        # Deterministic Multi-Step Execution
-│   │   └── logging.py         # Agent Logging Footprint
-│   ├── viz/
-│   │   ├── charts.py          # Distribution plotting
-│   │   ├── explainability.py  # Quick Insight Heuristics
-│   │   └── spatial_map.py     # Interactive Plotly Generation
-│   └── reporting/
-│       └── report.py          # Jinja2 HTML rendering
-└── templates/                 # Contains report_template.html XAI Layout
-```
+## 🔬 Executive Summary: The Spatial Biology Defense Mechanism
+In solid tumors, localized desmoplastic stroma and dense extracellular matrix (ECM) often prevent small molecules and biologics from sufficiently penetrating the tumor core. Standard bulk RNA-seq or dissociated single-cell sequencing cannot capture these micro-anatomical barriers, routinely resulting in clinical trial failures due to unpredicted physical obstruction rather than intrinsic target resistance.
 
-## 💻 How to Run Locally
+**SpatialCP solves this architectural blind spot:**
+1. **Inferring Physical Barriers:** Ingesting spatial coordinates and multiplexed annotations to compile an actionable 2D/3D tissue resistance matrix.
+2. **Iterative Spatial Diffusion Engine:** Moving far beyond uniform biological assumptions by simulating physiologically accurate molecular distributions using dampening Gaussian kernels, heavily constrained by local stromal density.
+3. **Agentic Orchestration:** Utilizing specialized analytical personas (`[Agent: Spatial Mapper]`, `[Agent: Physicist]`, `[Agent: Pharmacologist]`) to execute deterministic, sequential computations on the coordinate data. This guarantees auditability, yielding transparent validation logs identical to clinical software standards.
+4. **Deterministic XAI:** Outputting instantaneous insights and downloadable, interactive HTML telemetry reports to bridge the gap between computational biologists and clinical decision-makers.
 
-Using **Python virtual environment**:
+## 🚀 Architectural & Methodological Highlights
+
+### Multiplexed Immunofluorescence (IF) Emulation
+The visual engine Abandons generic data-science plotting in favor of custom-styled 3D point-cloud renderings mimicking multiplexed tissue staining (e.g., DAPI Stroma, Neon Target-Cancer clusters, Magenta Immune populations) suspended against a true dark-field `#0E1117` microscopy canvas.
+
+### The Physics Sandbox
+Users are biologically anchored by inputting compound nomenclature (e.g. "Imatinib"), triggering automated logic that scales estimated molecular weight resistance against diffusion coefficients. The resulting penetration time-lapse animates the physical spread and decay of the agent through the 3D tumor mass, explicitly contrasting naïve uniform exposure against advanced ECM-resisted exposure.
+
+## 💻 Deployment & Usage
+
+### 🌐 Live Hosted Version
+This platform is deployed securely via Streamlit Community Cloud. 
+**Access the live prototype here:** https://spatialcp-avtduabwglnuhgcm22jjhc.streamlit.app/
+
+### Run Locally (Docker / Python)
 ```bash
 # 1. Clone repo
-git clone https://github.com/yourusername/SpatialCP.git
+git clone https://github.com/balajiprincejoshva-byte/SpatialCP.git
 cd SpatialCP
 
 # 2. Install Dependencies
-python -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
 
-# 3. Launch App
+# 3. Initialize Agent Engine
 streamlit run app.py
 ```
 
-Using **Docker**:
-```bash
-docker build -t spatialcp .
-docker run -p 8501:8501 spatialcp
-```
+## ⚠️ Pipeline Assumptions & Translation Constraints
+- **Dimensional Extrapolation:** Current ST methods routinely yield 2D contiguous slices. The module projects a synthetic Z-variance representing micrometer tissue thickness for rotatable inspection, paving the way for true volumetric arrays.
+- **Damped Equation Simplification:** The diffusion kernels proxy generalized mass transport but do not dynamically resolve active endocytosis or localized vascular efflux pressures unless parameterized by specific user-provided transcript markers.
+- **In Vitro Calibration Need:** The `[Agent: Pharmacologist]` uses scaled heuristics to dictate PD response; transitioning this from prototype to clinical grade requires calibration against multiplexed phenotypic viability screens.
 
-Go to `http://localhost:8501` in your browser.
-
-## ⚠️ Assumptions & Limitations
-- **2D Slice Constraints**: Current ST methodologies mostly provide 2D slices. 3D spatial extrapolation represents an adjacent opportunity.
-- **Simplified Graph/Grid Convolution**: Heat equation models proxy diffusion but ignore active transport mechanisms (e.g., P-gp efflux pumps) unless explicitly mapped by transcript markers.
-- **Heuristic Cellular Response**: Response predictions dynamically multiply local drug concentrations with inferred sensitivity constants. This is a robust framework, but the constant values themselves are demonstrative and would require *in vitro* calibration (e.g. from highly multiplexed viability screens) for clinical inference.
-
-## 🔮 Future Enhancements
-- **Spatial Autocorrelation metrics** (Moran's I) to statistically test the clustering of response predictions.
-- **Native Scanpy/AnnData support** for `.h5ad` ingestion directly from standard bioinformatics pipelines.
-- **Parallel processing** via `Dask` when scaling point-clouds beyond millions of cells encompassing whole-slide imaging.
+## 🔮 Strategic Next Steps
+- **Direct AnnData Ingestion:** Linking the ingestion pipeline to native `.h5ad` formats for massive-scale integration from standard Scanpy/Squidpy pipelines.
+- **Spatial Autocorrelation (Moran's I):** Identifying statistically significant resistance clusters algorithmically. 

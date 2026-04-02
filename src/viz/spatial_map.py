@@ -35,7 +35,8 @@ def plot_spatial_map(df: pd.DataFrame, color_col: str, title: str, is_categorica
             df, x='x', y='y', z='z', color=color_col,
             color_discrete_map=CELL_TYPE_COLORS,
             title=title, hover_data=hover_cols,
-            animation_frame=animation_frame
+            animation_frame=animation_frame,
+            height=750
         )
     else:
         # Continuous color scale suitable for dark mode
@@ -45,13 +46,16 @@ def plot_spatial_map(df: pd.DataFrame, color_col: str, title: str, is_categorica
             color_continuous_scale="Viridis",
             title=title, hover_data=hover_cols,
             animation_frame=animation_frame,
-            range_color=range_c
+            range_color=range_c,
+            height=750
         )
         
     fig.update_traces(marker=dict(size=3, opacity=0.8, line=dict(width=0)))
     
     fig.update_layout(**layout_args)
     fig.update_layout(
+        font=dict(color=COLOR_THEME['text'], size=14),
+        title=dict(font=dict(size=22), x=0.5, y=0.95),
         scene=dict(
             xaxis=dict(showgrid=False, zeroline=False, showticklabels=False, title="", visible=False),
             yaxis=dict(showgrid=False, zeroline=False, showticklabels=False, title="", visible=False),

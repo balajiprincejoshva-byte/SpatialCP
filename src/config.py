@@ -12,7 +12,7 @@ VERSION = "1.0.0"
 # VISUALIZATION SETTINGS (Dark Mode / Biotech Vibe)
 # -------------------------------------------------------------
 COLOR_THEME = {
-    "background": "#191970", # Deep Midnight Blue
+    "background": "#0E1117", # Charcoal / Deep Space
     "text": "#FAFAFA",
     "primary": "#AAF0D1",    # Magic Mint
     "secondary": "#0892D0",  # Rich Electric Blue
